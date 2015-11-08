@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.posts')
+angular.module('atwork.posts');
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/feed', {
@@ -12,7 +12,7 @@ angular.module('atwork.posts')
       })
       .when('/', {
         templateUrl: '/modules/posts/views/feed.html',
-        controller: 'PostsCtrl',
+        controller: 'MomentsCtrl',
         resolve: {
           resolvedFeeds: resolvedFeeds({limitComments: true})
         }
@@ -26,6 +26,13 @@ angular.module('atwork.posts')
       })
       .when('/feed/:hashtag', {
         templateUrl: '/modules/posts/views/feed.html',
+        controller: 'PostsCtrl',
+        resolve: {
+          resolvedFeeds: resolvedFeeds({limitComments: true})
+        }
+      })
+      .when('/testy', {
+        templateUrl: '/modules/posts/views/test.html',
         controller: 'PostsCtrl',
         resolve: {
           resolvedFeeds: resolvedFeeds({limitComments: true})

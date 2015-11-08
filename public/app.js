@@ -39,7 +39,7 @@ app.controller('AppCtrl', [
     $scope.goHome = function() {
       appLocation.url('/');
     };
-
+    
     $scope.showUserActions = function($event) {
       $mdBottomSheet.show({
         templateUrl: '/modules/users/views/user-list.html',

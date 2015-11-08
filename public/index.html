@@ -10,7 +10,6 @@
         <title ng-bind="systemSettings ? systemSettings.workplace : 'AtWork'"></title>
     </head>
     <body layout="row" ng-controller="AppCtrl">
-      <!-- new deployment: 25, May, 2015!! -->
       <div class="preloader" ng-if="!appReady">
         <div class="preloader-content">
           <img src="images/preloader.gif" width="300">
@@ -49,8 +48,13 @@
                   <md-inline-list-icon class="fa fa-globe"></md-inline-list-icon>
                 </md-button>
                 <span hide-sm ng-if="!isLoggedIn">{{systemSettings ? systemSettings.workplace : 'AtWork'}}</span>
-                <span hide-sm hide-md class="tiny" flex>&nbsp; {{barTitle}}</span>
+              <!-- workplace motto --
+              <span hide-sm hide-md class="tiny" flex>&nbsp; {{barTitle}}</span>
+              -->
                 <span flex hide-md></span>
+              <md-button class="md-old-style" ng-if="isLoggedIn" href="/testy" title="Test"><!-- ISSUE HERE -->
+                  <md-inline-list-icon class="fa fa-plus"></md-inline-list-icon>
+                </md-button>
                 <md-button class="md-old-style" ng-if="isLoggedIn && (user.roles.indexOf('admin') !== -1)" href="/settings" title="Settings">
                   <md-inline-list-icon class="fa fa-cog"></md-inline-list-icon>
                 </md-button>
